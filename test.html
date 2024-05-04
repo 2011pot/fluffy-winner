@@ -1,1 +1,96 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>schoolscool</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/lightofsnow1/waterfox/main/waterfoxlogo.png">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0;
+            background-color: rgba(255, 255, 255, 0.01); /* White with 99% transparency */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 15px; /* Rounded corners */
+        }
+
+        #sidebar button {
+            display: block;
+            padding: 10px 20px;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #sidebar button:hover {
+            background-color: #ddd;
+        }
+
+        #openSidebarBtn {
+            position: fixed;
+            top: 20px;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 50%; /* Make button round */
+            padding: 10px; /* Adjust padding */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="embedFrame" src="https://www.classicinventions.com/uv/service/hvtrs8%2F-lkgjtmfqnmw3.eivhwb%2Cim%2Frovavown%60lmcief%2F" frameborder="0"></iframe>
+
+    <button id="openSidebarBtn" onclick="toggleSidebar()">☰</button>
+
+    <div id="sidebar">
+        <button onclick="changeEmbed('https://www.classicinventions.com/')">proxy</button>
+        <button onclick="changeEmbed('https://www.classicinventions.com/uv/service/hvtrs8%2F-lkgjtmfqnmw3.eivhwb%2Cim%2Frovavown%60lmcief%2F')">games</button>
+        <button onclick="changeEmbed('bing.com')">panic button!</button>
+        <!-- Add more buttons as needed -->
+        <button onclick="toggleSidebar()">Close</button>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "0px" || sidebar.style.width === "") {
+                sidebar.style.width = "250px";
+                document.getElementById("openSidebarBtn").style.display = "none";
+            } else {
+                sidebar.style.width = "0";
+                document.getElementById("openSidebarBtn").style.display = "block";
+            }
+        }
+
+        function changeEmbed(url) {
+            document.getElementById("embedFrame").src = url;
+            toggleSidebar(); // Close sidebar after changing embed URL
+        }
+    </script>
+
+</body>
+</html>
